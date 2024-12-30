@@ -14,7 +14,7 @@ COPY informix_install.sh /opt/hcl/scripts
 COPY informix_prune.sh  /opt/hcl/scripts
 COPY informix_inf.env   /opt/hcl/scripts
 RUN ln -s  /opt/hcl/scripts/informix_inf.env /usr/local/bin/informix_inf.env
-COPY dinit.c            /opt/hcl/scripts
+COPY dinit.c we_edition.ja[r]    /opt/hcl/scripts
 
 
 COPY informix_install.properties /opt/hcl/informix_install.properties
