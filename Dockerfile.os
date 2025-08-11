@@ -1,13 +1,11 @@
-FROM registry.access.redhat.com/ubi7/ubi-minimal:latest 
-LABEL maintainer=darin.tracy@hcl.com 
-
-
+FROM redhat/ubi8-minimal:latest
+LABEL maintainer=ehrig.t@googlemail.com
 
 RUN microdnf -y install wget
 # Add CentOS repo
 COPY ./centos.repo /etc/yum.repos.d/
 
-RUN wget http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-7 -O /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7 && \
+RUN wget http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-Official -O /etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial && \
      microdnf install -y \
         shadow-utils            \     
         which sudo tar gzip \     
@@ -25,7 +23,14 @@ RUN wget http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-7 -O /etc/pki/rpm-gp
 
 RUN microdnf install -y java
 
+# ** Informix Server needs a lower version of these libraries. 
+#         Workaround:
+#         Run the following commands as root user from /usr/lib64
+#     ln -s libncurses.so.6 libncurses.so.5
+#     ln -s libtinfo.so.6 libtinfo.so.5
 
+RUN sudo ln -s /usr/lib64/libncurses.so.6 /usr/lib64/libncurses.so.5
+RUN sudo ln -s /usr/lib64/libtinfo.so.6 /usr/lib64/libtinfo.so.5
 
 
 

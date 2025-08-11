@@ -1,30 +1,30 @@
 #centos base packages
-[base]
-name=CentOS-$releasever - Base
-baseurl=https://vault.centos.org/7.9.2009/os/$basearch/
+[baseos]
+name=CentOS Linux $releasever - BaseOS
+baseurl=https://vault.centos.org/centos/$releasever/BaseOS/$basearch/os/
 gpgcheck=1
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 enabled=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial
 
-[updates]
-name=CentOS-$releasever - Updates
-baseurl=https://vault.centos.org/7.9.2009/updates/$basearch/
+[appstream]
+name=CentOS Linux $releasever - AppStream
+baseurl=https://vault.centos.org/centos/$releasever/AppStream/$basearch/os/
 gpgcheck=1
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 enabled=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial
 
 [extras]
-name=CentOS-$releasever - Extras
-baseurl=https://vault.centos.org/7.9.2009/extras/$basearch/
+name=CentOS Linux $releasever - Extras
+baseurl=https://vault.centos.org/centos/$releasever/extras/$basearch/os/
 gpgcheck=1
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 enabled=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial
 
 [centosplus]
-name=CentOS-$releasever - CentOSPlus
-baseurl=https://vault.centos.org/7.9.2009/centosplus/$basearch/
+name=CentOS Linux $releasever - Plus
+baseurl=https://vault.centos.org/centos/$releasever/centosplus/$basearch/os/
 gpgcheck=1
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 enabled=0
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial
 
 #
