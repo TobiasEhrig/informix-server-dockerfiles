@@ -23,7 +23,7 @@ RUN wget http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-7 -O /etc/pki/rpm-gp
     echo "informix ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers && \
     echo "informix:in4mix" | chpasswd
 
-
+RUN microdnf install -y java
 
 
 
