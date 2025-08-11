@@ -1,7 +1,7 @@
 #!/bin/bash
 
 TAG_OS=os-ubi
-TAG_IFX=informix-de
+TAG_IFX=${$1:-informix-de}
 
 ### Build os-ubi
 docker build -t ${TAG_OS} -f Dockerfile.os .
