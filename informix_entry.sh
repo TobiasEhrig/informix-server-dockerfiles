@@ -335,10 +335,7 @@ then
    printf ". $BASEDIR/scripts/informix_inf.env\n" >> ~informix/.bashrc 
 
    sudo sh -c 'echo "" >> /root/.profile'
-   sudo sh -c 'echo ". /usr/local/bin/informix_inf.env" >> /root/.profile'
-
-   MSGLOG ">>>    Installing GSKIT! ..." N
-   sudo $INFORMIXDIR/gskit/installgskit
+   sudo sh -c 'echo ". /usr/local/bin/informix_inf.env" >> /root/.profile'   
    
 else
    cnt=`grep informix_inf ~informix/.bashrc|wc -l`
@@ -349,12 +346,13 @@ else
       sudo sh -c 'echo "" >> /root/.profile'
       sudo sh -c 'echo ". /usr/local/bin/informix_inf.env" >> /root/.profile'
 
-
-      #sudo $INFORMIXDIR/gskit/installgskit
       #sudo touch /etc/hosts.equiv
       #sudo sh -c "printf '++\n' >> /etc/hosts.equiv"
    fi
 fi
+
+MSGLOG ">>>    Installing GSKIT! ..." N
+sudo $INFORMIXDIR/gskit/installgskit
 
 
 ###
