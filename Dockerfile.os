@@ -22,6 +22,7 @@ RUN wget http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-Official -O /etc/pki
     echo "informix:in4mix" | chpasswd
 
 RUN microdnf install -y java
+RUN microdnf install -y net-tools
 
 # ** Informix Server needs a lower version of these libraries. 
 #         Workaround:
